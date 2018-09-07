@@ -25,7 +25,7 @@ const Footer = () => {
         color:grey;
         font-size:35pt;
         padding:1em;
-        border-top:1px solid grey;
+        border-top:1px solid silver;
 
         &:hover{
             color:white;

@@ -23,7 +23,7 @@ export default class ResumeMenu extends React.Component{
             this.setState({educationSection: educationSection})
         /*loading work experience section*/
             let workArray = {work :
-                [{company: "Indepedence Blue Cross", jobTitle:"Junior Web Developer", projects: "Blue Button, Provider Finder", technology:"Javascript, jQuery, KonyOne, Java"},
+                [{company: "Indepedence Blue Cross", jobTitle:"Web Developer", projects: "Blue Button, Provider Finder", technology:"Javascript, jQuery, KonyOne, Java"},
                  {company: "PPG Industries", jobTitle:"Web Developer Intern", projects: "Refinish User Administration", technology:".Net, C#"}]};
             let workSection = workArray.work.map((post) => {
                     let props = {company: post.company, jobTitle: post.jobTitle, projects: post.projects, technology: post.technology};
@@ -53,7 +53,7 @@ export default class ResumeMenu extends React.Component{
         const MenuContainer = styled.div`
             background-color: black;
             padding-top:.2em;
-            color:white;
+            color:silver;
             display:flex;
             justify-content: flex-start;
             flex-direction:column;

@@ -22,7 +22,7 @@ export default class Header extends React.Component{
 			    width:15em;
 			    font-size:25pt;
 			    font-family: Raleway-Regular;
-			    color:white;
+			    color:silver;
 			    letter-spacing: .1em
 			   	text-align:right;
 			 `;
@@ -36,12 +36,16 @@ export default class Header extends React.Component{
 		    justify-content: space-between;
 		    font-size:20pt;
 		    font-family: Raleway-Regular;
-		    color:white;
+		    color:silver;
 		    letter-spacing: .1em;
 		 `;
 		 const StyledLink = styled(Link)`
 		 		text-decoration: none;
-				color:white;
+				color:silver;
+
+				&:hover{
+					color:white;
+				}
 
 		 `;
 		return(

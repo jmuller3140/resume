@@ -5,7 +5,7 @@ import TextField from '@material-ui/core/TextField';
 const ContactInfo = () => {
     const ContactContainer = styled.div`
         display:flex;
-        color:white;
+        color:silver;
         justify-content:center;
         text-align:center;
         font-family: Raleway-Regular;
@@ -45,13 +45,17 @@ const ContactInfo = () => {
         text-align:left;
         font-size:20pt;
         margin:.1em;
-        color:white;
+        color:silver;
     `;
     const Label = styled.div`
         text-align:right;
         font-size:20pt;
         width:5em;
         margin-right:1em;
+    `;
+    const Anchor = styled.a`
+        color:silver;
+
     `;
 
 
@@ -60,7 +64,7 @@ const ContactInfo = () => {
             <CenteringDiv>
                 <Message>Inquire.</Message>
                 <ContactList>
-                    For any inquires please reach out at: jmuller3150@gmail.com
+                    For any inquires please reach out at: <Anchor href="mailto:jmuller3140@gmail.com">jmuller3140@gmail.com</Anchor>
                 </ContactList>
             </CenteringDiv>
         </ContactContainer>

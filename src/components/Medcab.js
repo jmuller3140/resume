@@ -26,11 +26,12 @@ const Medcab = (props) => {
         display:flex;
         flex-direction:column;
         align-items:left;
+        width:50%;
     `;
     const Description = styled.div`
         color:black;
         font-size:20pt;
-        font-family:Moon-Light;
+        font-family:Raleway-Regular;
     `;
     const location = window.location.origin + '/images/medmock.jpg';
     return(
@@ -38,9 +39,8 @@ const Medcab = (props) => {
             <img src={location} height='600px' width='800px'alt="Medicine Iphone Picture"/>
             <DescriptionContainer>
             <StyledLink href="https://itunes.apple.com/us/app/ibx/id584785907?mt=8" target="_blank">MEDICINE CABINET</StyledLink><br/>
-            <Description>Feature added to the mobile application tracking and storing users medicines</Description><br/>
-            <Description>Gave users reminders to take their medicications</Description>
-            <br/>
+            <Description>Feature added to the mobile application tracking and storing users medicines. Set alarms for user to take medication on time
+            and took stock of user's dosage. Also provided warnings of medications that could be dangerous if consumed simultaneously.</Description><br/>
             <Description>Built in Javascript</Description><br/>
             <Description></Description>
             </DescriptionContainer>

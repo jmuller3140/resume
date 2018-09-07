@@ -17,7 +17,7 @@ const Home = () => {
         width:24em;
         margin-left:4em;
         padding-top:.5em;
-        color:white;
+        color:silver;
         font-size:20pt;
         font-family:Raleway-Regular;
     `;

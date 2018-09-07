@@ -6,7 +6,7 @@ const Education = (props) => {
     const EducationItemContainer = styled.div`
         display:flex;
         flex-direction:column;
-        color:white;
+        color:silver;
         font-family: Raleway-Regular;
         letter-spacing:.1em;
         font:20pt;

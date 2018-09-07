@@ -14,7 +14,7 @@ const Project = (props) => {
         font-family: Raleway-Regular;
         font-size:15pt;
         text-align:right;
-        color:white;
+        color:silver;
         padding-top:5em;
         width:30em;
     `;

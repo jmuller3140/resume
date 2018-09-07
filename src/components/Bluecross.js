@@ -26,11 +26,13 @@ const Bluecross = (props) => {
         display:flex;
         flex-direction:column;
         align-items:left;
+        width:50%;
+        line-height:.9em;
     `;
     const Description = styled.div`
         color:black;
         font-size:20pt;
-        font-family:Moon-Light;
+        font-family:Raleway-Regular;
     `;
     const location = window.location.origin + '/images/providermockup.jpg';
     return(
@@ -39,7 +41,7 @@ const Bluecross = (props) => {
             <DescriptionContainer>
             <StyledLink href="https://ibxweb.healthsparq.com/healthsparq/public/#/one/city=Philadelphia&state=PA&country=&insurerCode=IBXBLUE_I&brandCode=IBXBLUECOMM&productCode=all" target="_blank">PROVIDER FINDER</StyledLink><br/>
             <Description>A co-developed application showing users the closest</Description>
-            <Description>providers based on their insurance policy and GPS location</Description>
+            <Description>providers based on their insurance policy and GPS location. Uses Google's API that takes in GPS locations of health service providers to give the user directions based on their current location. Displays indepth information of each curated provider.</Description>
             <br/>
             <Description>Built in Javascript, jQuery, Java</Description><br/>
             <Description></Description>
