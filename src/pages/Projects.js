@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Footer from './Footer';
+import { Footer, Header } from '../components';
 import ProjectDisplay from '../components/ProjectDisplay';
 const Projects = (props) => {
 

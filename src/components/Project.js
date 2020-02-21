@@ -7,29 +7,26 @@ const Project = (props) => {
 
     const ProjectContainer = styled.div`
         display:flex;
-        justify-content: flex-start;
-        width:100%;
+        flex-direction: column;
+        justify-content: center;
+        align-items:center;
+        width:40%;
     `;
     const DescriptionContainer = styled.div`
         font-family: Raleway-Regular;
         font-size:15pt;
-        text-align:right;
-        color:silver;
-        padding-top:5em;
-        width:30em;
+        text-align:center;;
+        color: #333;
+        width: 250px;
     `;
     const PictureContainer = styled.div`
-        width:250px;
-        height:250px;
+        width:300px;
+        height:600px;
         color:black;
         opacity:1;
         position:relative;
+        border-radius: 5px;
         overflow:hidden;
-        margin-bottom:5em;
-        margin-left:10em;
-        width:30em;
-        margin-right:25%;
-        text-align:left;
     `;
 
     const Text = styled.div`
@@ -39,7 +36,7 @@ const Project = (props) => {
         width:150px;
         text-align:center;
         z-index:2;
-        color:white;
+        color: #333;
         font-size:20pt;
         font-family:Moon-Light;
         letter-spacing:.1em;
@@ -63,15 +60,15 @@ const Project = (props) => {
     `;
     return(
         <ProjectContainer>
-            <DescriptionContainer>
-                {description}
-            </DescriptionContainer>
             <Link to={link}>
                 <PictureContainer>
                     <Text>{name}</Text>
-                    <Image src={picturePath} height="250" width="250"/>
+                    <Image src={picturePath}/>
                 </PictureContainer>
             </Link>
+            <DescriptionContainer>
+                {description}
+            </DescriptionContainer>
         </ProjectContainer>
 
     )

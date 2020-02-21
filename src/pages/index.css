@@ -60,7 +60,16 @@
     local('Moon-Bold'), url(../fonts/MoonBold.ttf) format('truetype')
     local('Moon-Bold'), url(../fonts/MoonBold.otf) format('otf');
 }
-body,html{
-    height:100%;
-    background-color:black;
+
+@font-face{ 
+    font-family: Lovelyn;
+    src: local('Lovelyn'), url(../fonts/Lovelyn.woff) format('woff');
+    src: local('Lovelyn'), url(../fonts/Lovelyn.woff2) format('woff2'),
+    local('Lovelyn'), url(../fonts/Lovelyn.ttf) format('truetype')
+    local('Lovelyn'), url(../fonts/Lovelyn.otf) format('otf');
 }
+body,html{
+    height: 100vh;
+    background-color:#eee;
+}
+

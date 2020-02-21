@@ -1,0 +1,10 @@
+.IntroText__Container {
+    padding:150px;
+    background: grey;
+    color: white;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    font-size: 18pt;
+    font-family: Raleway-Regular;
+}

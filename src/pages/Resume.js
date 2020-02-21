@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ResumeMenu from '../components/ResumeMenu';
-import Footer from './Footer';
+import { Footer, Header } from '../components';
 
 const Resume = () => {
             return(

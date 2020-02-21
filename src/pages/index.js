@@ -1,7 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router} from 'react-router-dom';
-
-import Header from './Header';
+import {Header} from '../components/Header';
 import RouteList from './RouteList';
 
 import './index.css';
@@ -12,7 +11,7 @@ import './index.css';
 const Routes = () => (
   <Router>
     <div>
-      <Header/>
+      <Header />
       <RouteList/>
     </div>
   </Router>

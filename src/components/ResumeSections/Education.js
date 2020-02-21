@@ -6,12 +6,12 @@ const Education = (props) => {
     const EducationItemContainer = styled.div`
         display:flex;
         flex-direction:column;
-        color:silver;
+        color:black;
         font-family: Raleway-Regular;
         letter-spacing:.1em;
         font:20pt;
-        background-color:black;
-        width:75%;
+        background-color: #eee;
+        width:100%;
         margin-top:2em;
     `;
     const ItemContainer = styled.div`

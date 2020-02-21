@@ -14,6 +14,7 @@ const Footer = () => {
         flex-direction:column;
         align-items:center;
         justify-content:center;
+        background-color: #eee;
     `;
     const Icons = styled.div`
         width:100%;
@@ -28,7 +29,7 @@ const Footer = () => {
         border-top:1px solid silver;
 
         &:hover{
-            color:white;
+            color:#028474;
         }
     `;
     const Copyright = styled.div`
@@ -39,13 +40,10 @@ const Footer = () => {
         return(
             <FooterContainer>
                 <Icons>
-                    <Icon href="https://www.facebook.com/jimmy.muller.7140" target="_blank"><FontAwesomeIcon icon={faFacebook}/></Icon>
-                    <Icon href="https://twitter.com/jmuller3140" target="_blank"><FontAwesomeIcon icon={faTwitterSquare}/></Icon>
-                    <Icon href="http://www.linkedin.com/in/james-muller3140" target="_blank"><FontAwesomeIcon icon={faLinkedin}/></Icon>
-                    <Icon href="https://github.com/jmuller3140" target="_blank"><FontAwesomeIcon icon={faGithub}/></Icon>
+                    <Icon href="/" target="_blank"><FontAwesomeIcon icon={faLinkedin}/></Icon>
                 </Icons>
                 <Copyright>
-                    Made in 2018 <FontAwesomeIcon icon={faCopyright}/>
+                    Made in 2020 <FontAwesomeIcon icon={faCopyright}/>
                 </Copyright>
             </FooterContainer>
             )

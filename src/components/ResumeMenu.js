@@ -1,59 +1,160 @@
 import React from 'react';
 
-import Education from './Education';
-import Work from './WorkExperience';
-import Research from './Research';
+import Education from './ResumeSections/Education';
+import Work from './ResumeSections/WorkExperience';
+import LanguagesAndSkills from './ResumeSections/LanguagesAndSkills';
+
 import styled from 'styled-components';
 
 export default class ResumeMenu extends React.Component{
     constructor(){
         super();
-        this.state = {educationSection:"", workSection:"", researchSection: ""};
+        this.state = {
+            educationSection:"",
+            workSection:"",
+            languagesAndSkillsSection: "",
+            skillsSection: ""
+        };
+    }
+
+    renderLanguagesAndSkillsSection() {
+        const languages = ["English", "Korean"]
+        const skills = [
+            "Hand-sketching",
+            "Technical Sketches",
+            "Stone Sorting",
+            "Gouache Rendering",
+            "Rhino 3D",
+            "Photoshop",
+            "Illustrator",
+            "Microsoft Office"
+        ]
+        const props = { languages, skills }
+        return(<LanguagesAndSkills { ...props }/>)
+    }
+
+    renderEducationSection() {
+        let educationArray = {education :
+            [{
+                school: "Fashion Institute of Technology",
+                degree:"Associate Degree in Applied Science, Jewelry Design",
+                minor: "",
+                gpa:"3.72/4.0",
+                graduated: "Dec 2013"
+            },
+             {
+                 school: "Sungshin Women’s University",
+                 degree:"Bachelor of Fine Art (BFA), Metal Craft",
+                 minor: "",
+                 gpa:"3.78/45",
+                 graduated: "2011"
+            }]
+        };
+        const educationSection = educationArray.education.map((post) => {
+            const { school, degree, minor, gpa, graduated } = post;
+                let props = {
+                    school: school,
+                    degree: degree,
+                    minor: minor,
+                    gpa: gpa,
+                    graduated: graduated};
+                return (<Education {...props} />)
+            });
+            return educationSection
+    }
+
+    renderWorkSection() {
+        let workArray = {
+            work :
+            [{
+                company: "Valani",
+                jobTitle:"Senior Jewelry Designer",
+                descriptions: [
+                    'Manage design process from concept, trend research, design, technical sketch to finished product',
+                    'Design jewelry in one of a kind and collection with precious stones and diamonds',
+                    'Manage production, collecting gemstones and diamonds, communicating with factories, and quality control'
+                ],
+                date:"Aug 17' - Present",
+                location: 'New York, NY'
+            },
+            {
+                 company: "Real Gems Inc",
+                 jobTitle:"Web Developer Intern",
+                 descriptions: [
+                    'Design one of a kind jewelry with rubies, sapphires, emeralds and diamonds',
+                    'Design from concept, design, technical sketch, to finished product',
+                    'Built up the high-end jewelry suite styles.'
+                ],
+                 date:"May 14' - Aug 17'",
+                 location: 'New York, NY'
+            },
+            {
+                company: "Lynn Ban",
+                jobTitle:"Freelance Technical Designer",
+                descriptions: [],
+                date:"Oct 14' - Mar 15'",
+                location: 'New York, NY'
+           },
+           {
+                company: "Judith Ripka",
+                jobTitle:"Jewlrey Design Intern",
+                descriptions: [
+                    'Work with designer and tech artists as learning method and textures associated with Judith Ripka',
+                    'Assist a designer facilitate completion, sketches and technical drawings ',
+                ],
+                date:"Sep2013 - May 2014'",
+                location: "New York, NY"
+            },
+        {
+                company: "St. Etienne",
+                jobTitle:"Merchandising Intern",
+                descriptions: [
+                    'Sold imported high-end jewelry in the luxury department store in Seoul, Korea',
+                    'Assisted on importing jewelry at Hong Kong Jewelry and Gem Fair 2011',
+                ],
+                date:"Jan 11' - Mar 11",
+                location: "Seoul, South Korea"
+        },]
+        };
+        const workSection = workArray.work.map((post) => {
+            const { company, jobTitle, descriptions, date, location } = post;
+                let props = {
+                    company,
+                    jobTitle,
+                    descriptions,
+                    location,
+                    date
+                };
+                return (<Work {...props} />)
+            });
+            return workSection
     }
 
     componentDidMount(){
-        /*loading education section*/
-            let educationArray = {education :
-                [{school: "University of Pittsburgh", degree:"Bachelor's Degree in Information Science", minor: "Concentrated Area in Computer Science", gpa:"3.425", graduated: "May 2014"},
-                 {school: "St. John's University", degree:"Certificate in Philosophy", minor: "", gpa:"3.98", graduated: "May 2017"}]};
-            let educationSection = educationArray.education.map((post) => {
-                    let props = {school: post.school, degree: post.degree, minor: post.minor, gpa: post.gpa, graduated: post.graduated};
-                    return (<Education {...props} />)
-                });
-            this.setState({educationSection: educationSection})
-        /*loading work experience section*/
-            let workArray = {work :
-                [{company: "Indepedence Blue Cross", jobTitle:"Web Developer", projects: "Blue Button, Provider Finder", technology:"Javascript, jQuery, KonyOne, Java"},
-                 {company: "PPG Industries", jobTitle:"Web Developer Intern", projects: "Refinish User Administration", technology:".Net, C#"}]};
-            let workSection = workArray.work.map((post) => {
-                    let props = {company: post.company, jobTitle: post.jobTitle, projects: post.projects, technology: post.technology};
-                    return (<Work {...props} />)
-                });
-            this.setState({workSection: workSection});
-            /*loading research experience section*/
-            let researchArray = {research :
-                [{school: "University of Pittsburgh", program:"iSchool Inclusion Institute", title:"i3 Scholar Fully Funded Researcher", projects: "Social Media usage during Hurricane Sandy"}]};
-            let researchSection = researchArray.research.map((post) => {
-                    let props = {school: post.school, program: post.program, title: post.title, projects: post.projects};
-                    return (<Research {...props} />)
-                });
-            this.setState({researchSection: researchSection});
+            const educationSection = this.renderEducationSection()
+            this.setState({educationSection})
+
+            const workSection = this.renderWorkSection()
+            this.setState({workSection});
+
+            const languagesAndSkillsSection = this.renderLanguagesAndSkillsSection()
+            this.setState({languagesAndSkillsSection})
     }
     render(){
         const ResumeContainer = styled.div`
             padding-bottom:5em;
-            background-color: black;
+            background-color: #eee;
         `;
         const SectionContainer = styled.div`
             display:inline-flex;
             justify-content: flex-start;
-            background-color:black;
+            background-color: #eee;
             width:100%;
         `;
         const MenuContainer = styled.div`
-            background-color: black;
+            background-color: #eee;
             padding-top:.2em;
-            color:silver;
+            color:black;
             display:flex;
             justify-content: flex-start;
             flex-direction:column;
@@ -75,7 +176,9 @@ export default class ResumeMenu extends React.Component{
             text-align:left;
             width:495px;
             padding-bottom:2em;
+            background-color: #eee;
         `;
+        const { educationSection, languagesAndSkillsSection, workSection } = this.state;
             return(
             <ResumeContainer>
                 <SectionContainer>
@@ -83,24 +186,24 @@ export default class ResumeMenu extends React.Component{
                         <MenuItem>Education</MenuItem>
                     </MenuContainer>
                     <EducationContainer>
-                        {this.state.educationSection}
+                        {educationSection}
                     </EducationContainer>
                 </SectionContainer>
                 <SectionContainer>
-                <MenuContainer>
-                    <MenuItem>Work Experience</MenuItem>
-                </MenuContainer>
-                <EducationContainer>
-                        {this.state.workSection}
-                </EducationContainer>
+                    <MenuContainer>
+            <MenuItem>{`Skills & Languages`}</MenuItem>
+                    </MenuContainer>
+                    <EducationContainer>
+                            {languagesAndSkillsSection}
+                    </EducationContainer>
                 </SectionContainer>
                 <SectionContainer>
-                <MenuContainer>
-                    <MenuItem>Research Experience</MenuItem>
-                </MenuContainer>
-                <EducationContainer>
-                        {this.state.researchSection}
-                </EducationContainer>
+                    <MenuContainer>
+                        <MenuItem>Work Experience</MenuItem>
+                    </MenuContainer>
+                    <EducationContainer>
+                            {workSection}
+                    </EducationContainer>
                 </SectionContainer>
             </ResumeContainer>
         )

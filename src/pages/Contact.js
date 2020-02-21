@@ -1,6 +1,6 @@
 import React from 'react';
 
-import Footer from './Footer';
+import { Footer, Header } from '../components';
 import ContactInfo from '../components/ContactInfo';
 
 const Contact = () => {

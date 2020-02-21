@@ -2,19 +2,19 @@ import React from 'react';
 import styled from 'styled-components';
 
 import Project from './Project';
+import { IntroText } from './introText';
 
 export default class ProjectDisplay extends React.Component {
     constructor(props){
         super(props);
         this.state = {projectSection: ""};
-        this.match = this.props.match.url;
     }
 
     componentDidMount(){
             let projectArray = {project :
-                [{name: "RUMIN", picturePath: window.location.origin + '/images/rumin.png', key:0, description:"A Journaling App", link: this.match + '/rumin'},
-                {name: "PROVIDER FINDER", picturePath: window.location.origin + '/images/bluecross.png', key:1, description: "A Health Information Repository", link: this.match + '/bluecross'},
-                {name: "MEDICINE CABINET", picturePath: window.location.origin + '/images/bluecross.png', key:2, description:"A Medicine Tracker", link: this.match + '/medcab'},]};
+                [{name: "HIGHEND", picturePath: window.location.origin + '/images/ring.jpg', key:0, description:"Responsibly sourced jewels", link:'/highend'},
+                {name: "VALANI ATELIER", picturePath: window.location.origin + '/images/bracelet.jpg', key:1, description: "A minimalist jewelry brand", link: '/valani'},
+                {name: "RENDERING", picturePath: window.location.origin + '/images/rendering.jpg', key:2, description:"Gouache rendering", link: '/rendering'},]};
             let projectSection = projectArray.project.map((post) => {
                     let props = {name: post.name, picturePath: post.picturePath, key: post.key, description: post.description, link:post.link};
                     return (<Project {...props} />)
@@ -26,8 +26,10 @@ export default class ProjectDisplay extends React.Component {
         const ProjectContainer = styled.div`
             width:100%;
             display:flex;
-            justify-content: flex-end;
-            background-color:black;
+            justify-content: center;
+            flex-direction: column;
+            align-items:center;
+            background-color:#eee;
             padding-bottom:3em;
             &.ProjectTransition-appear {
                 opacity:.01;
@@ -40,13 +42,17 @@ export default class ProjectDisplay extends React.Component {
             }
         `;
         const CenterDiv = styled.div`
-            width:85%;
+            margin-top: 50px;
+            width:75%;
             display:flex;
-            flex-direction:column;
+            flex-direction:row;
             justify-content: space-between;
         `;
+
+        const text = "EAch project was very important to me and hopefully dsplays my wide array of skillset."
         return(
                 <ProjectContainer>
+                    <IntroText text={text}/>
                     <CenterDiv>
                         {this.state.projectSection}
                     </CenterDiv>

@@ -10,7 +10,7 @@ const ContactInfo = () => {
         text-align:center;
         font-family: Raleway-Regular;
         letter-spacing:.1em;
-        background-color:black;
+        background-color:#EEEEEE;
         width:100%;
         margin-bottom:5em;
     `;
@@ -31,7 +31,7 @@ const ContactInfo = () => {
         margin-top:2em;
         padding:1em;
         border-radius:5px;
-        background-color:black;
+        background-color:#EEEEEE;
         font-size:15pt;
         line-height:2em;
     `;
@@ -64,7 +64,7 @@ const ContactInfo = () => {
             <CenteringDiv>
                 <Message>Inquire.</Message>
                 <ContactList>
-                    For any inquires please reach out at: <Anchor href="mailto:jmuller3140@gmail.com">jmuller3140@gmail.com</Anchor>
+                    For any inquires please reach out at: <Anchor href="mailto:hyeseonnajd@gmail.com">hyeseonnajd@gmail.com</Anchor>
                 </ContactList>
             </CenteringDiv>
         </ContactContainer>
