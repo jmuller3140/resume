@@ -1,4 +1,5 @@
 import React from 'react';
+import MediaQuery from 'react-responsive';
 
 import Education from './Education';
 import Work from './WorkExperience';
@@ -76,33 +77,107 @@ export default class ResumeMenu extends React.Component{
             width:495px;
             padding-bottom:2em;
         `;
+//
+// --------------------------------------------------------
+//
+        const ResumeContainerMobile = styled.div`
+            padding-bottom:2em;
+            background-color: black;
+            font-size:15pt;
+            width:100%;
+        `;
+        const SectionContainerMobile = styled.div`
+            display:flex;
+            flex-direction:column;
+            justify-content: center;
+            align-items:center;
+            text-align:center;
+            background-color:black;
+            width:100%;
+        `;
+        const MenuContainerMobile = styled.div`
+            background-color: black;
+            padding-top:.2em;
+            color:silver;
+            display:flex;
+            justify-content: flex-start;
+            flex-direction:column;
+            font-family: Raleway-Regular;
+            font-size: 15pt;
+            width:10em;
+        `;
+        const MenuItemMobile = styled.div`
+            margin: 1em;
+            letter-spacing: .1em;
+        `;
+        const EducationContainerMobile = styled.div`
+            display:flex;
+            flex-direction:column;
+            justify-content: center;
+            text-align:left;
+            width:80%;
+            padding-left:4em;
+            padding-bottom:1em;
+        `;
             return(
-            <ResumeContainer>
-                <SectionContainer>
-                    <MenuContainer>
-                        <MenuItem>Education</MenuItem>
-                    </MenuContainer>
-                    <EducationContainer>
-                        {this.state.educationSection}
-                    </EducationContainer>
-                </SectionContainer>
-                <SectionContainer>
-                <MenuContainer>
-                    <MenuItem>Work Experience</MenuItem>
-                </MenuContainer>
-                <EducationContainer>
-                        {this.state.workSection}
-                </EducationContainer>
-                </SectionContainer>
-                <SectionContainer>
-                <MenuContainer>
-                    <MenuItem>Research Experience</MenuItem>
-                </MenuContainer>
-                <EducationContainer>
-                        {this.state.researchSection}
-                </EducationContainer>
-                </SectionContainer>
-            </ResumeContainer>
+            <div>
+                <MediaQuery query="(min-device-width: 1224px)">
+                    <ResumeContainer>
+                        <SectionContainer>
+                            <MenuContainer>
+                                <MenuItem>Education</MenuItem>
+                            </MenuContainer>
+                            <EducationContainer>
+                                {this.state.educationSection}
+                            </EducationContainer>
+                        </SectionContainer>
+                        <SectionContainer>
+                        <MenuContainer>
+                            <MenuItem>Work Experience</MenuItem>
+                        </MenuContainer>
+                        <EducationContainer>
+                                {this.state.workSection}
+                        </EducationContainer>
+                        </SectionContainer>
+                        <SectionContainer>
+                        <MenuContainer>
+                            <MenuItem>Research Experience</MenuItem>
+                        </MenuContainer>
+                        <EducationContainer>
+                                {this.state.researchSection}
+                        </EducationContainer>
+                        </SectionContainer>
+                    </ResumeContainer>
+                </MediaQuery>
+                <MediaQuery query="(max-device-width: 1224px)">
+                    <ResumeContainerMobile>
+                        <SectionContainerMobile>
+                            <MenuContainerMobile>
+                                <MenuItemMobile>Education</MenuItemMobile>
+                            </MenuContainerMobile>
+                            <EducationContainerMobile>
+                                {this.state.educationSection}
+                            </EducationContainerMobile>
+                        </SectionContainerMobile>
+                        <SectionContainerMobile>
+                        <MenuContainerMobile>
+                            <MenuItemMobile>Work Experience</MenuItemMobile>
+                        </MenuContainerMobile>
+                        <EducationContainerMobile>
+                                {this.state.workSection}
+                        </EducationContainerMobile>
+                        </SectionContainerMobile>
+                        <SectionContainerMobile>
+                        <MenuContainerMobile>
+                            <MenuItemMobile>Research Experience</MenuItemMobile>
+                        </MenuContainerMobile>
+                        <EducationContainerMobile>
+                                {this.state.researchSection}
+                        </EducationContainerMobile>
+                        </SectionContainerMobile>
+                    </ResumeContainerMobile>
+                </MediaQuery>
+            </div>
         )
     }
 }

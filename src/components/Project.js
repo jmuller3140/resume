@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import MediaQuery from 'react-responsive';
 import styled from 'styled-components';
 
 const Project = (props) => {
@@ -30,6 +31,9 @@ const Project = (props) => {
         width:30em;
         margin-right:25%;
         text-align:left;
+
+        @media (max-device-width: 1224px){
+        margin-bottom:1.5em;
     `;
 
     const Text = styled.div`
@@ -61,19 +65,42 @@ const Project = (props) => {
             transform: scale(1.1);
         }
     `;
+//
+//
+//
+    const ProjectContainerMobile = styled.div`
+        display:flex;
+        justify-content: center;
+        align-items:center;
+        width:100%;
+        margin-top:2em;
+    `;
     return(
-        <ProjectContainer>
-            <DescriptionContainer>
-                {description}
-            </DescriptionContainer>
-            <Link to={link}>
-                <PictureContainer>
-                    <Text>{name}</Text>
-                    <Image src={picturePath} height="250" width="250"/>
-                </PictureContainer>
-            </Link>
-        </ProjectContainer>
-
+        <div>
+            <MediaQuery query="(min-device-width: 1224px)">
+                <ProjectContainer>
+                    <DescriptionContainer>
+                        {description}
+                    </DescriptionContainer>
+                    <Link to={link}>
+                        <PictureContainer>
+                            <Text>{name}</Text>
+                            <Image src={picturePath} height="250" width="250"/>
+                        </PictureContainer>
+                    </Link>
+                </ProjectContainer>
+            </MediaQuery>
+            <MediaQuery query="(max-device-width: 1224px)">
+                <ProjectContainerMobile >
+                    <Link to={link}>
+                        <PictureContainer>
+                            <Text>{name}</Text>
+                            <Image src={picturePath} height="250" width="250"/>
+                        </PictureContainer>
+                    </Link>
+                </ProjectContainerMobile>
+            </MediaQuery>
+        </div>
     )
 
 

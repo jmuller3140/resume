@@ -9,10 +9,13 @@ const Research = (props) => {
         color:silver;
         font-family: Raleway-Regular;
         letter-spacing:.1em;
-        font:20pt;
         background-color:black;
         width:75%;
         margin-top:2em;
+
+        @media (max-device-width: 1224px){
+        font-size:11pt
+    }
     `;
     const ItemContainer = styled.div`
         margin:.1em;

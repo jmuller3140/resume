@@ -8,6 +8,7 @@ import Resume from './Resume';
 import Projects from './Projects';
 import Contact from './Contact';
 
+import Weather from '../components/Weather';
 import Rumin from '../components/Rumin';
 import Bluecross from '../components/Bluecross';
 import Medcab from '../components/Medcab';
@@ -41,6 +42,11 @@ const Wrapper = styled.div`
         top: 200px;
         left: 0;
       }
+  @media (max-device-width: 1224px){
+    section.route-section {
+        top: 125px;
+    }
+  }
 `;
 
 const RouteList = ({location, match}) => {
@@ -53,6 +59,7 @@ const RouteList = ({location, match}) => {
                   <Route exact path="/" component={Home} />
                   <Route path="/resume" component={Resume} />
                   <Route exact path="/projects" render={(props) => <Projects {...props} />} />
+                  <Route path="/projects/weather" component={Weather} />
                   <Route path="/projects/rumin" component={Rumin} />
                   <Route path="/projects/bluecross" component={Bluecross} />
                   <Route path="/projects/medcab" component={Medcab} />
